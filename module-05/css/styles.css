@@ -66,7 +66,6 @@ img {
 }
 
 .main-menu {
-  width: 475px;
   margin: 0;
   margin-top: 10px;
   padding: 0;
@@ -102,14 +101,23 @@ img {
 
 .slider {
   width: 100%;
-  height: 602px;
   position: relative;
   margin: 0;
   padding: 0;
 }
 
+
 .slides-item {
   position: relative;
+}
+
+.slides-item::before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 2, 0.52);
 }
 
 .slider-image {
@@ -121,9 +129,9 @@ img {
 
 .slides-name {
   position: absolute;
-  width: 745px;
-  left: 400px;
-  top: 220px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .slides-title,
@@ -153,26 +161,24 @@ img {
   text-align: left;
 }
 
-.overlay {
+.buttons {
   position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 2, 0.52);
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
 }
 
 .slider-button {
   display: inline-block;
   border: none;
-  position: absolute;
   width: 104px;
   height: 104px;
-  background-color: transparent;
-  z-index: 5;
+  background-color: rgba(78, 198, 171, 0.7);
   background-repeat: no-repeat;
   background-position: center;
 }
+
 
 .slider-button:hover {
   background-color: rgb(26, 188, 156);
@@ -180,14 +186,12 @@ img {
 
 .slider-button-pre {
   background-image: url("../img/icons/pre.png");
-  left: 245px;
-  top: 230px;
+  float: left;
 }
 
 .slider-button-next {
   background-image: url("../img/icons/next.png");
-  top: 230px;
-  right: 245px;
+  float: right;
 }
 
 .wrapper {
@@ -220,9 +224,13 @@ img {
   margin-top: 27px;
 }
 
+.pic-wrap {
+  position: relative;
+}
+
 .overlay {
   width: 100%;
-  height: 282px;
+  height: 100%;
   background-color: rgb(0, 0, 0, 0.5);
   position: absolute;
   border: 10px solid rgba(255, 255, 255, 0.5);
@@ -276,7 +284,7 @@ img {
   margin-right: 0;
 }
 
-.overlay-list-item:nth-last-child() {
+.overlay-list-item:nth-last-child(4n) {
   margin-bottom: 0;
 }
 
@@ -307,6 +315,7 @@ img {
   font-size: 14px;
   text-align: center;
 }
+
 
 .collection-list {
   list-style: none;
